@@ -1,0 +1,84 @@
+:root {
+  --menu-bars-color: black;
+  --game-item-color: gray;
+}
+
+* {
+  font-family: "Arial";
+}
+
+.bottom-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  width: 100%;
+  height: 400px;
+  bottom: 0px;
+  color: white;
+  background-color: var(--menu-bars-color);
+  padding: 20px;
+}
+.bottom-bar-section {
+  display: flex;
+  flex-direction: column;
+}
+.b-bar-logo {
+  height: 50px;
+  margin-top: 8px;
+}
+
+.home-display{
+    background-image: url("rsc/home-background.webp");
+}
+
+.game-list-container h1{
+    text-align: center;
+    
+}
+
+.game-list{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 40px;
+}
+.game-list-item {
+    display: flex;
+    box-sizing: content-box;
+    flex-direction: column;
+    margin: 15px;
+    border-radius: 10%;
+    width: 250px;
+}
+.game-list-item img {
+    display: flex;
+    width: 70%;
+    background-color: black;
+    padding: 15%;
+    border-radius: 5%;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: se;
+  padding: 20px;
+  background-color: var(--menu-bars-color);
+  color: white;
+  background-color: rgb(61, 61, 61);
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
