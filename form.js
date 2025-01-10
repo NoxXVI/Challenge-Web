@@ -1,6 +1,6 @@
 "use strict"
 
-import emailjs from "emailjs";
+import emailjs from "./node_modules/emailjs";
 
 const bouton = document.createElement('button');
 bouton.addEventListener(click, () => {
