@@ -1,10 +1,7 @@
-"use strict"
-
-import emailjs from "./node_modules/emailjs";
-
+'use strict';
 const bouton = document.createElement('button');
 bouton.addEventListener(click, () => {
-    emailjs.sendForm('service_r255z1x', 'template_fusgldc', form)
+    
     .then((response) => {
         console.log('Email envoyé avec succès !', response.status, response.text);
     })
