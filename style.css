@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; /* Simplifie la gestion des dimensions */
+  text-decoration: none;
 }
 
 :root {
@@ -171,3 +172,4 @@ button[type="submit"]:hover {
 button[type="submit"]:active {
   transform: scale(5.20);
 }
+
