@@ -4,113 +4,292 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Contactez-nous</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 10px 20px;
+      }
+
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 1rem;
+      }
+
+      .navbar a:hover {
+        text-decoration: underline;
+      }
+
+      .navbar .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      /* Section gauche */
+      .left-section {
+        flex: 1;
+        padding-right: 20px;
+      }
+
+      .left-section h1 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .left-section p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icons a {
+        text-decoration: none;
+      }
+
+      .social-icons img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .right-section {
+        flex: 1.5;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .right-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .form-group {
+        flex: 1 1 calc(50% - 10px);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group label {
+        font-size: 1rem;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .form-group textarea {
+        resize: none;
+        height: 100px;
+      }
+
+      .form-group button {
+        background-color: rgb#333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 10px;
+      }
+
+      .form-group button:hover {
+        background-color: #555;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .right-section {
+          margin-top: 20px;
+        }
+      }
+      .s-icons {
+        align-items: center;
+        border-radius: 50%;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        padding: 5px;
+        line-height: 0;
+      }
+      .s-icons:hover {
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(-3px); /* Ombre au survol */
+      }
+
+      /* Barre du bas */
+      .bottom-bar {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .bottom-bar-section {
+        flex: 1;
+        margin: 10px;
+      }
+
+      .bottom-bar-section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .bottom-bar-section a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .bottom-bar-section a:hover {
+        text-decoration: underline;
+      }
+
+      .b-bar-logo {
+        max-width: 100px;
+      }
+    </style>
   </head>
   <body>
     <div class="navbar">
       <a class="icon-name" href="/index.html">
-        <img src="/rsc/brain-icon.svg" class="brain-icon">
+        <svg class="brain-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
         <h2>Brainstormer</h2>
       </a>
       <div class="nav-links">
         <a href="/index.html">Home</a>
         <a href="/games/index.html">Nos jeux</a>
         <a href="/contact.html">Contact</a>
-        <a href="about.html">A propos</a>
+        <a href="/about.html">A propos</a>
       </div>
     </div>
-    <div class="blog-container">
 
-      <h1>Contactez-nous</h1>
-      <p>
-        Vous pouvez nous contacter à l'adresse suivante : <a
-        href="mailto:contact@gmail.com"
-      </p>
-      <h2>Instagram</h2>
-      <p>
-        Vous pouvez nous suivre sur Instagram :
-        <a href="https://www.instagram.com/contact" target="_blank">Instagram</a>
-      </p>
-      <h3>Facebook</h3>
-      <p>
-        Vous pouvez nous suivre sur Facebook :
-        <a href="https://www.facebook.com/contact" target="_blank">Facebook</a>
-      </p>
-  
-      <!-- Intégration du formulaire de contact -->
-      <div class="form-container">
-        <h2>Contactez-nous</h2>
-        <form id="contactForm">
-  
-          <!-- Champ Prénom -->
+    <div class="container">
+      <!-- Section gauche -->
+      <div class="left-section">
+        <h1>Contactez-nous</h1>
+        <p>
+          Vous recherchez une agence digitale qui construit avec vous votre projet et qui
+          s'adapte à tous les supports de communication ?
+        </p>
+        <p>Nous sommes à votre écoute !</p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com" target="_blank" class="s-icons">
+            <img src="rsc/insta.svg" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com" target="_blank" class="s-icons">
+            <img src="rsc/Facebook.svg" alt="Facebook" />
+          </a>
+          <a href="https://www.x.com" target="_blank" class="s-icons">
+            <img src="rsc/twitter.svg" alt="twitter" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Section droite -->
+      <div class="right-section">
+        <h2>Formulaire de contact</h2>
+        <form>
           <div class="form-group">
-            <label for="firstname">Prénom :</label>
-            <input type="text" id="firstname" name="firstname" required>
-            <div class="error" id="firstnameError"></div>
+            <label for="name">Nom*</label>
+            <input type="text" id="name" name="name" required />
           </div>
-  
-          <!-- Champ Nom -->
           <div class="form-group">
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="name" required>
-            <div class="error" id="nameError"></div>
+            <label for="email">Email*</label>
+            <input type="email" id="email" name="email" required />
           </div>
-  
-          <!-- Champ Adresse -->
           <div class="form-group">
-            <label for="address">Adresse :</label>
-            <input type="text" id="address" name="address">
-            <div class="error" id="addressError"></div>
+            <label for="phone">Téléphone*</label>
+            <input type="tel" id="phone" name="phone" required />
           </div>
-  
-          <!-- Champ Code postal -->
           <div class="form-group">
-            <label for="postalCode">Code postal :</label>
-            <input type="text" id="postalCode" name="postalCode">
-            <div class="error" id="postalCodeError"></div>
+            <label for="company">Nom de la société</label>
+            <input type="text" id="company" name="company" />
           </div>
-  
-          <!-- Champ Email -->
           <div class="form-group">
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" required>
-            <div class="error" id="emailError"></div>
+            <label for="subject">Sujet</label>
+            <select id="subject" name="subject">
+              <option value="informations">Demande d'informations</option>
+              <option value="devis">Demande de devis</option>
+              <option value="autre">Autre</option>
+            </select>
           </div>
-  
-          <!-- Champ Message -->
           <div class="form-group">
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" required></textarea>
-            <div class="error" id="messageError"></div>
+            <label for="message">Votre message</label>
+            <textarea id="message" name="message"></textarea>
           </div>
-  
-          <!-- Consentement -->
           <div class="form-group">
-            <input type="checkbox" id="consent" name="consent" required>
-            <label for="consent">J'accepte la politique de confidentialité.</label>
-            <div class="error" id="consentError"></div>
+            <button id='bouton' type="submit">Envoyer</button>
           </div>
-  
-          <!-- Bouton d'envoi -->
-          <div class="form-group">
-            <button type="submit" id="Envoyer">Envoyer</button>
-          </div>
-  
-          <small>Vos données ne seront utilisées que pour répondre à votre demande.</small>
         </form>
       </div>
-    </div>       
-    <!-- Fin du formulaire -->
+    </div>
 
     <div class="bottom-bar">
       <div class="bottom-bar-section">
-        <img class="b-bar-logo" src="rsc/logo-efrei.svg" alt="efrei"/>
+        <img class="b-bar-logo" src="rsc/logo-efrei.svg" alt="efrei" />
       </div>
       <div class="bottom-bar-section">
         <h2 class="b-bar-section-title">Studio</h2>
-        <a> legal </a>
-        <a href="contact.html">contact</a>
-        <a href="games/index.html">games</a>
+        <a href="#">Legal</a>
+        <a href="contact.html">Contact</a>
+        <a href="games/index.html">Games</a>
       </div>
       <div class="bottom-bar-section">
         <h2 class="b-bar-section-title">Games</h2>
@@ -121,9 +300,11 @@
       <div class="bottom-bar-section">
         <h2 class="b-bar-section">Social</h2>
         <a href="https://instagram.com">Instagram</a>
+        <a href="https://facebook.com">Facebook</a>
         <a href="https://x.com">Twitter</a>
-        <a href="mailto:contact@gmail.com">mail</a>
+        <a href="mailto:contact@gmail.com">Mail</a>
       </div>
     </div>
+    <script type="module" src="form.js"></script>
   </body>
 </html>

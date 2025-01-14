@@ -13,25 +13,39 @@
   font-family: "Poppins";
 }
 
+/* Barre du bas */
 .bottom-bar {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  gap: 50px;
-  width: 100%;
-  height: 400px;
-  bottom: 0;
-  color: white;
-  background-color: var(--menu-bars-color);
+  background-color: #333;
+  color: #fff;
   padding: 20px;
-}
-.bottom-bar-section {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
+
+.bottom-bar-section {
+  flex: 1;
+  margin: 10px;
+}
+
+.bottom-bar-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.bottom-bar-section a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.bottom-bar-section a:hover {
+  text-decoration: underline;
+}
+
 .b-bar-logo {
-  height: 50px;
-  margin-top: 8px;
+  max-width: 100px;
 }
 
 .home-display {
@@ -66,6 +80,9 @@
 .blog-container h2 {
   margin-top: 15px;
   font-size: 25px;
+}
+.blog-container img{
+  width: 85%;
 }
 
 
@@ -114,7 +131,7 @@
 .brain-icon {
   width: 40px; /* Taille de l'icône */
   height: 40px;
-  fill: white; /* Couleur blanche pour l'icône */
+  stroke: white; /* Couleur blanche pour l'icône */
 }
 
 /* Conteneur pour les liens */
@@ -132,4 +149,25 @@
 
 .nav-links a:hover {
   text-decoration: underline;
+}
+
+button[type="submit"] {
+  background-color: #141914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffffff;
+  color: #141914;
+  border: 1px solid #141914;
+}
+
+button[type="submit"]:active {
+  transform: scale(5.20);
 }
