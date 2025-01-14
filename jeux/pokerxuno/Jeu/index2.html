@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uno Poker</title>
+  <link rel="stylesheet" href="V8.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <div class="table">
+    
+    <div class="cercle">
+      
+      <div class="zone-cartes-jouees">
+        <h3>Carte Active</h3>
+        <div class="cartes-jouees">
+          <img src="active-card.png" alt="Carte active" id="active-card">
+        </div>
+      </div>
+      <div class="mise-totale" id="mise-totale">
+        <p>Mise Totale : <span id="total-bet">0</span></p>
+      </div>
+    </div>
+    
+      <div class="pioche" id="deck">
+        <p>Pioche</p>
+        <div class="card-back"></div>
+      </div>
+
+      
+      <div class="joueur joueur-1" id="player-1">
+        <div class="avatar">
+        </div>
+        <div class="cartes-en-main">
+          <div class="cartes" id="cartes-joueur-1">
+          </div>
+        </div>
+        <div class="jetons">
+          <p>Jetons : <span id="chips-player-1">100</span></p>
+        </div>
+      </div>
+
+      <div class="joueur adversaire-gauche" id="player-2">
+        <h3>Joueur 2</h3>
+        <div class="avatar">
+          <img src="avatar2.png" alt="Avatar du joueur 2">
+        </div>
+        <div class="jetons">
+          <p>Jetons : <span id="chips-player-2">90</span></p>
+        </div>
+      </div>
+
+      <div class="joueur adversaire-devant" id="player-3">
+        <h3>Joueur 3</h3>
+        <div class="avatar">
+          <img src="avatar3.png" alt="Avatar du joueur 3">
+        </div>
+        <div class="jetons">
+          <p>Jetons : <span id="chips-player-3">80</span></p>
+        </div>
+      </div>
+
+    <div class="joueur joueur-3">
+      <h3>Joueur 3</h3>
+      <div class="joueur-3-cartes">
+          <div class="carte">7</div>
+          <div class="carte">8</div>
+          <div class="carte">9</div>
+          <div class="carte">+2</div>
+          <div class="carte">Joker</div>
+      </div>
+  </div>
+
+      <div class="joueur adversaire-droite" id="player-4">
+        <h3>Joueur 4</h3>
+        <div class="avatar">
+          <img src="avatar4.png" alt="Avatar du joueur 4">
+        </div>
+        <div class="jetons">
+          <p>Jetons : <span id="chips-player-4">70</span></p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="zone-mise">
+      <label for="bet-input">Miser :</label>
+      <input type="number" id="bet-input" class="montant-mise" min="1" placeholder="0">
+      <button class="bouton-miser" id="place-bet-button">Placer</button>
+    </div>
+  </div>
+
+  <script src="V2.js"></script>
+</body>
+</html>

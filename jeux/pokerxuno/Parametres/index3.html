@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paramètres</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="settings-container">
+    <!-- En-tête -->
+    <div class="header">
+      <h2 id="title">Paramètres</h2>
+      <span class="user-id">id8363GN36</span>
+    </div>
+
+    <!-- Section des paramètres -->
+    <div class="settings">
+      <!-- Luminosité -->
+      <div class="setting">
+        <label for="brightness" id="brightness-label">Luminosité</label>
+        <div class="slider-container">
+          <span class="value-label" id="brightness-value">50%</span>
+          <input type="range" id="brightness" name="brightness" min="0" max="100" value="50">
+        </div>
+      </div>
+
+      <!-- Son -->
+      <div class="setting">
+        <label for="sound" id="sound-label">Son</label>
+        <div class="slider-container">
+          <span class="value-label" id="sound-value">50%</span>
+          <input type="range" id="sound" name="sound" min="0" max="100" value="50">
+        </div>
+      </div>
+
+      <!-- Langue -->
+      <div class="setting">
+        <label for="language" id="language-label">Langue</label>
+        <div class="language-toggle">
+          <button class="language-button" id="language-toggle">FR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bouton retour -->
+    <div class="footer">
+      <button class="return-button" id="return-button">Retour</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

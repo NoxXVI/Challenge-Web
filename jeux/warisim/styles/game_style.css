@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+/* ___________________Map______________________ */
+
+#map {
+  display: grid;
+  grid-template-columns: repeat(30, 64px);
+  grid-template-rows: repeat(20, 64px);
+  position: relative;
+  width: fit-content;
+  border: 4px dashed black;
+  margin-bottom: 50px;
+}
+
+.tile {
+  box-sizing: border-box;
+  display: block;
+  width: 64px;
+  height: 64px;
+  background-size: cover; /* Adapte l'image à la taille de la case */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat;
+  border: 1px dashed black;
+}
+
+.tile:hover{
+  border: 4px solid red ;
+  mask-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+.factory {
+  background-image: url("../assets/sprites/map/factory.svg");
+}
+
+.city {
+  background-image: url("../assets/sprites/map/city.svg");
+}
+.qg {
+  background-image: url("../assets/sprites/map/qg.svg");
+}
+
+.grass {
+  background-color: #7cfc00;
+}
+
+.road {
+  background-color: #474747;
+}
+
+.bridge {
+  background-color: #939393;
+}
+
+.river {
+  background-color: blue;
+}
+
+/* ___________________Menu______________________ */
+
+.footer {
+  position: fixed;
+  bottom: 62px;
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: left;
+  transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+}
+
+/* Footer masqué par défaut */
+#footer-container {
+  display: flex;
+  flex-direction: row;
+  max-height: 0;  /* Cacher par défaut */
+  overflow: hidden;  /* Empêcher le défilement */
+  visibility: hidden;  /* Cacher le footer */
+  opacity: 0;  /* Cacher visuellement */
+  transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+}
+
+/* Affichage du footer quand la checkbox est cochée */
+input[type="checkbox"]:checked ~ #footer-container {
+  max-height: 30%;  /* Ajustez selon la taille du footer */
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Animation pour le bouton de basculement du footer */
+.toggle-footer-button-label {
+  display: flex;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  align-items: center;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+  transition: transform 0.3s ease;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Rotation de l'icône lorsque le footer est visible */
+#footer-toggle-button:checked + .toggle-footer-button-label {
+  transform: rotate(180deg);
+}
+
+/* ___________________Footer sections______________________ */
+
+.section_name {
+  position: absolute;
+  pointer-events: none;
+  color: rgb(183, 182, 182);
+  top: 10px;
+}
+.footer-section {
+  display: flex;
+  /* border-radius: 20px; */
+  border: 2px solid white;
+  background-color: #474747;
+  /* margin-right: 10px; */
+  padding: 15px;
+  padding-top: 35px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: content-box;
+}
+
+.entity-display {
+  flex: content 1 auto;
+}
+
+.factory-display {
+  display: flex;
+  flex-direction: row;
+  max-width: 30%;
+  gap: 15px;
+  flex: content 1 auto;
+}
+
+.options-list {
+  flex: content 1 auto;
+  padding-right: 10px;
+}
+
+.description {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: start;
+  line-height: normal;
+  flex-direction: column;
+}
+.description button {
+  align-self: flex-end;
+}
+.description ul img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.scroll-content {
+  display: flex;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  scrollbar-color: grey transparent;
+  flex-direction: column;
+}
+
+.scroll-content a {
+  color: white;
+  text-decoration: none;
+  padding-right: 30px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.scroll-content a:hover {
+  color: red;
+}
+
+.scroll-content a img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+/* ___________________Action Menu_____________________ */
+.actionMenu {
+  position: absolute;
+  display: flex;
+  background-color: #474747;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid white;
+  gap: 15px
+}
+
+
+/* ___________________Bottom Bar______________________ */
+.info-bar {
+  position: fixed;
+  box-sizing: border-box;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 2PX solid white;
+  background-color: #474747;
+  padding: 5px;
+  padding-left: 15PX;
+  color: white;
+  /* z-index: 999; Assurez-vous que la barre d'info est au-dessus du footer */
+}
+.info-bar h1 {
+  margin-right: 10px;
+}
+.info-bar h2{
+  padding-left: 5PX;
+  padding-right: 5px;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+#finir-tour {
+  position: absolute;
+  right: 50px;
+  background-color: #eb2a1f;
+  width: 130px;
+  height: 40px;
+  border-radius: 10px;
+  box-shadow:  0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+#finir-tour:hover {
+  background-color: #47c634;
+  transform: scale(1.1)
+}
+
+
+footer {
+  position: fixed;
+  bottom: 50px; 
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: left;
+  z-index: 998; /* Le footer est juste en dessous de la barre d'info */
+}
+.inline-image{
+  /* Je ne sais pas quoi mettre */
+  display: inline-block;
+  vertical-align: -2Px;
+}
+
+/* ___________________Sprite______________________ */
+
+#couche-sprite {
+  position: absolute;
+  top: 0;
+}
+
+.sprite {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+}
+
+#map-editor {
+  box-sizing: content-box;
+}
+
+#map-editor div:hover {
+  border: 2px solid red;
+}

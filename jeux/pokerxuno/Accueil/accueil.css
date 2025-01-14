@@ -1,0 +1,124 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #ffebcd; /* Light beige background for warmth */
+}
+
+/* Container Styling */
+.menu-container {
+  width: 450px;
+  height: 550px;
+  background: linear-gradient(135deg, #ff6f61, #ffcc5c);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+/* Top Section */
+.top-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.currency-button {
+  background-color: #fdd835;
+  color: #333333;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.currency-button:hover {
+  transform: scale(1.1);
+  background-color: #ffd700;
+}
+
+.user-id {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Center Section */
+.center-section h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.play-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #34d399;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  background-color: #059669;
+}
+
+.multiplayer-label {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Bottom Section */
+.bottom-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.avatar-button, .settings-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #333333;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.avatar-button:hover, .settings-button:hover {
+  transform: scale(1.1);
+  background-color: #f0f0f0;
+}
+
+.settings-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}

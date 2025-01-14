@@ -1,0 +1,383 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fffae8, #ffd6ba);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.table {
+    position: relative;
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(circle at center, #4caf50 0%, #2e7d32 100%);
+    border-radius: 20px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border: 3px solid #ffd700;
+}
+
+/* Cercle central */
+.cercle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Zone centrale : Carte jouée */
+.zone-cartes-jouees {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0px 0px 10px 2px #ff5733;
+    }
+    50% {
+        box-shadow: 0px 0px 20px 4px #ffbd33;
+    }
+    100% {
+        box-shadow: 0px 0px 10px 2px #ff5733;
+    }
+}
+
+.zone-cartes-jouees h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.cartes-jouees img {
+    width: 100px;
+    height: 140px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    animation: hover-scale 1.5s infinite alternate;
+}
+
+/* Animation de mise en avant */
+@keyframes hover-scale {
+    to {
+        transform: scale(1.05);
+    }
+}
+
+/* Pioche */
+.pioche {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: linear-gradient(135deg, #4a4a4a, #3a3a3a);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.pioche p {
+    margin: 0;
+    font-size: 18px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Orientation des cartes */
+.carte {
+    width: 50px;
+    height: 70px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.cartes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+/* Joueurs */
+.joueur {
+    position: absolute;
+    text-align: center;
+}
+
+.joueur h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ffd700;
+}
+
+.avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    border: 3px solid #ffd700;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 12px rgba(255, 215, 0, 0.8);
+}
+
+.cartes-en-main {
+    font-size: 14px;
+    color: #ffffff;
+    position: relative;
+    height: 100px;
+    overflow: visible; /* Permet de voir les cartes au-delà de la limite */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px; 
+}
+
+.jetons {
+    font-size: 14px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 300px; /* Taille adaptée à un éventail */
+    height: 230px; /* Augmente la hauteur pour laisser les cartes se déployer */
+    overflow: visible; /* Permet aux cartes de dépasser sans être coupées */
+    transform-origin: center bottom; /* Origine pour l’effet d’éventail */
+}
+
+/* Position initiale : Groupement des cartes */
+.cartes-en-main .carte {
+    position: absolute;
+    bottom: 0;
+    left: 40%; /* Positionne toutes les cartes au centre */
+    transform-origin: center bottom; /* Pivot pour l'éventail */
+    transform: translateX(-50%) rotate(0deg); /* Position initiale */
+    transition: transform 0.3s ease, z-index 0.3s ease;
+    z-index: 1; /* Les cartes se chevauchent par défaut */
+}
+
+/* Éventail dynamique lors du survol */
+.cartes-en-main:hover .carte {
+    transition: transform 0.5s ease, z-index 0.3s ease;
+}
+
+/* Distribution des cartes en éventail */
+.cartes-en-main:hover .carte:nth-child(1) {
+    transform: translateX(-120%) rotate(-20deg); /* Carte à gauche */
+    z-index: 2;
+}
+
+.cartes-en-main:hover .carte:nth-child(2) {
+    transform: translateX(-60%) rotate(-10deg); /* Carte légèrement à gauche */
+    z-index: 3;
+}
+
+.cartes-en-main:hover .carte:nth-child(3) {
+    transform: translateX(0%) rotate(0deg); /* Carte centrale */
+    z-index: 4;
+}
+
+.cartes-en-main:hover .carte:nth-child(4) {
+    transform: translateX(60%) rotate(10deg); /* Carte légèrement à droite */
+    z-index: 3;
+}
+
+.cartes-en-main:hover .carte:nth-child(5) {
+    transform: translateX(120%) rotate(20deg); /* Carte à droite */
+    z-index: 2;
+}
+
+/* Effet d’agrandissement au survol individuel */
+.cartes-en-main .carte:hover {
+    transform: scale(1.2) translateY(-20px);
+    z-index: 5; /* Toujours au premier plan */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Positioning joueurs */
+
+/* Zone de mise */
+.zone-mise {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+
+}
+
+.zone-mise label {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.montant-mise {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ffd700;
+    border-radius: 5px;
+    width: 80px;
+    margin-right: 10px;
+    color: #333333;
+    background-color: #fff;
+}
+
+.bouton-miser {
+    padding: 8px 16px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #ff5733, #ffbd33);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.bouton-miser:hover {
+    background: linear-gradient(135deg, #ff4500, #ffa500);
+    transform: scale(1.1);
+}
+
+.bouton-miser:active {
+    transform: scale(0.95);
+}
+/* Zone de jeu */
+.zone-jeu {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background: radial-gradient(circle, #4caf50 0%, #2e7d32 100%);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Mise totale affichée à droite de la carte active */
+.mise-totale {
+    position: absolute;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Joueurs repositionnés */
+.joueur {
+    position: absolute;
+    text-align: center;
+}
+
+.joueur-1 {
+    bottom: -100px; /* En dessous de la zone de jeu */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.adversaire-gauche {
+    left: -230px; /* À gauche de la zone de jeu */
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+.adversaire-devant {
+    top: -125px; /* Au-dessus de la zone de jeu */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.adversaire-droite {
+    right: -230px; /* À droite de la zone de jeu */
+    top: 55%;
+    transform: translateY(-50%);
+}
+/* Ajuste uniquement les jetons du joueur 2 */
+.adversaire-gauche .jetons {
+    margin-top: -80px; /* Rapproche les jetons de l'avatar */
+}
+
+/* Ajuste uniquement les jetons du joueur 3 */
+.adversaire-devant .jetons {
+    margin-top: -80px; /* Rapproche les jetons du texte ou de l'avatar */
+}
+
+/* Ajuste uniquement les jetons du joueur 4 */
+.adversaire-droite .jetons {
+    margin-top: -80px; /* Rapproche les jetons de l'avatar */
+}
+.joueur-1 .jetons {
+    margin-top: -25px; /* Réduit l'écart vertical */
+}
+
+/* Positionnement corrigé pour les cartes du joueur 3 */
+.joueur-3 {
+    position: absolute;
+    top: 10px; /* Ajustez pour abaisser les cartes */
+    left: 50%; /* Centré horizontalement */
+    transform: translateX(-50%); /* Pour les aligner au centre */
+    text-align: center;
+}
+.joueur-3 .joueur-3-cartes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5x; /* Espace entre les cartes */
+    margin-top: 10px; /* Espacement entre l'avatar et les cartes */
+}
+
+.joueur-3 .joueur-3-cartes .carte {
+    background-color: #000; /* Dos de la carte pour les autres joueurs */
+    color: transparent; /* Contenu masqué */
+    width: 50px;
+    height: 70px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    border: 2px solid #fff; /* Bordure visible */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    margin: 0.5px;
+}
+
+/* Lorsque le joueur 3 est actif et connecté, les cartes deviennent visibles */
+.joueur-3-visible .joueur-3-cartes .carte {
+    background-color: #fff; /* Face visible */
+    color: #000; /* Contenu visible */
+}
