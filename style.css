@@ -77,6 +77,12 @@ p {
   padding-bottom: 25px;
 }
 
+.description {
+  padding-top: 10px;
+  margin: 15px;
+  font-style: italic;
+}
+
 .blog-container {
   padding: 150px;
   padding-top: 75px;
