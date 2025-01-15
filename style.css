@@ -93,6 +93,11 @@ p {
   padding-top: 25px;
   padding-bottom: 25px;
 }
+.game-list-container a {
+  text-decoration: none; /* Supprime le soulignement */
+  color: inherit; /* Conserve la couleur du texte définie dans le style parent */
+  display: block; /* Fait que tout le contenu du lien est cliquable */
+}
 
 .game-list-container h1 {
   text-align: center;
@@ -135,6 +140,10 @@ p {
   margin-top: 20px;
   gap: 20px;
 }
+.blog-section img {
+  border: 2px solid white;
+}
+
 .blog-section button {
   margin-top: 10px;
 }
