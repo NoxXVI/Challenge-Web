@@ -135,6 +135,10 @@ p {
   margin-top: 20px;
   gap: 20px;
 }
+.blog-section img {
+  border: 2px solid white;
+}
+
 .blog-section button {
   margin-top: 10px;
 }
