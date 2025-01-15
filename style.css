@@ -5,8 +5,9 @@
 }
 
 :root {
-  --menu-bars-color: black;
-  --game-item-color: gray;
+  --menu-bars-color: #7D0223;
+  --game-item-color: #333;
+  --background-color:
 }
 
 * {
@@ -18,7 +19,7 @@ p {
 
 /* Barre du bas */
 .bottom-bar {
-  background-color: #333;
+  background-color: var(--menu-bars-color);
   color: #fff;
   padding: 20px;
   display: flex;
@@ -67,6 +68,27 @@ p {
   margin-left: 50px;
 }
 
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid white; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
+}
+
 .game-list-container {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -78,9 +100,18 @@ p {
 }
 
 .description {
-  padding-top: 10px;
-  margin: 15px;
+  color: white;
+  width: 100%;
+  padding-right: 75px;
+  padding-left: 75px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+
   font-style: italic;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+    url("rsc/consolevita.svg");
+  background-color: var(--menu-bars-color);
 }
 
 .blog-container {
@@ -107,31 +138,6 @@ p {
 .blog-section button {
   margin-top: 10px;
 }
-
-/* .game-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 40px;
-  padding-bottom: 70px;
-}
-.game-list-item {
-  display: flex;
-  box-sizing: content-box;
-  flex-direction: column;
-  margin: 15px;
-  border-radius: 10%;
-  width: 250px;
-}
-.game-list-item img {
-  display: flex;
-  width: 70%;
-  background-color: black;
-  padding: 15%;
-  border-radius: 5%;
-  margin-bottom: 15px;
-} */
-
 
 .card {
   display: block;
@@ -189,7 +195,7 @@ p {
   align-items: center; /* Aligne verticalement les éléments */
   justify-content: space-between; /* Icone à gauche, liens à droite */
   padding: 10px 20px;
-  background-color: #3d3d3d;
+  background-color: var(--menu-bars-color);
 }
 
 /* Style pour l'icône SVG */
@@ -224,30 +230,10 @@ p {
   text-decoration: underline;
 }
 
-button[type="submit"] {
-  background-color: #141914;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #ffffff;
-  color: #141914;
-  border: 1px solid #141914;
-}
-
-.bouton:active {
-  transform: scale(1.1);
-}
-
 /* Blog Container */
 .blog-container {
-  background-color: #121212;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  background-color: var(--menu-bars-color);
   color: #cccccc;
 
   line-height: 1.6;
@@ -274,7 +260,7 @@ button[type="submit"]:hover {
   --b: 2px; /* longueur de la bordure */
   --c: 5px; /* perspective du cube */
   --g: calc(var(--c) * 0.707); /* 0.707 = cos(45deg) = sin(45deg) */
-  --colorbox: #323050;
+  --colorbox: var(--menu-bars-color);
   font-family: 'Orbitron';
 
   padding: 8px;

@@ -8,21 +8,28 @@
         padding: 20px;
       }
 
+      body {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+    url("rsc/consolevita.svg");
+  background-color: var(--menu-bars-color);
+      }
+
       /* Section gauche */
       .left-section {
         flex: 1;
         padding-right: 20px;
+        color: white;
       }
 
       .left-section h1 {
         font-size: 2.5rem;
-        color: #333;
+        color: white;
         margin-bottom: 20px;
       }
 
       .left-section p {
         font-size: 1rem;
-        color: #555;
+        color: whitesmoke;
         margin-bottom: 20px;
         line-height: 1.6;
       }
@@ -36,9 +43,10 @@
         text-decoration: none;
       }
 
-      .social-icons img {
+      .social-icons svg {
         width: 32px;
         height: 32px;
+        stroke: white;
       }
 
       .right-section {
