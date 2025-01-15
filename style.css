@@ -12,6 +12,9 @@
 * {
   font-family: "Orbitron";
 }
+p {
+  font-family: 'Poppins';
+}
 
 /* Barre du bas */
 .bottom-bar {
@@ -64,9 +67,14 @@
   margin-left: 50px;
 }
 
+.game-list-container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 .game-list-container h1 {
   text-align: center;
-  margin-top: 35px;
+  padding-bottom: 25px;
 }
 
 .blog-container {
@@ -94,7 +102,7 @@
   margin-top: 10px;
 }
 
-.game-list {
+/* .game-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -116,6 +124,57 @@
   padding: 15%;
   border-radius: 5%;
   margin-bottom: 15px;
+} */
+
+
+.card {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  transition: all 300ms ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+.card__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 32px 32px;
+}
+.card__cover {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+}
+.card__body {
+  padding: 20px;
+}
+.card__title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.card__desc {
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #858484;
+  line-height: 1.6;
+}
+
+.card__cover--one {
+  background-image: url(rsc/warisim-logo.png);
+}
+.card__cover--two {
+  background-image: url(rsc/pokerxuno-logo.png);
+}
+.card__cover--three {
+  background-image: url(rsc/aim-trainer.webp);
 }
 
 /* Container principal de la barre de navigation */
@@ -209,6 +268,7 @@ button[type="submit"]:hover {
   --b: 2px; /* longueur de la bordure */
   --c: 5px; /* perspective du cube */
   --g: calc(var(--c) * 0.707); /* 0.707 = cos(45deg) = sin(45deg) */
+  --colorbox: #323050;
   font-family: 'Orbitron';
 
   padding: 8px;
@@ -218,8 +278,8 @@ button[type="submit"]:hover {
   background: 
     linear-gradient(-45deg, transparent var(--g), rgba(255, 255, 255, 0.6) 0) left / var(--c) 100%,
     linear-gradient(135deg, transparent var(--g), rgba(255, 255, 255, 0.3) 0) bottom / 100% var(--c),
-    conic-gradient(from -90deg at top var(--b) right var(--b), #323050 270deg, transparent 0),
-    conic-gradient(from 90deg at bottom calc(var(--c) + var(--b)) left calc(var(--c) + var(--b)), #323050 270deg, transparent 0);
+    conic-gradient(from -90deg at top var(--b) right var(--b), var(--colorbox) 270deg, transparent 0),
+    conic-gradient(from 90deg at bottom calc(var(--c) + var(--b)) left calc(var(--c) + var(--b)), var(--colorbox) 270deg, transparent 0);
   background-repeat: no-repeat;
   background-origin: border-box;
   transform: translate(calc(var(--c) / -1), calc(var(--c) / 1));
@@ -243,3 +303,9 @@ button[type="submit"]:hover {
       0% 100%, 0% 100%
     );
 }
+
+.onpage{
+  color:white;
+  --colorbox: #D91604
+}
+
