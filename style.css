@@ -75,8 +75,10 @@
 }
 .blog-container h1 {
   font-size: 50px;
+  margin-bottom: 25px;
 }
 .blog-container h2 {
+  margin-top: 15px;
   font-size: 25px;
 }
 .blog-container img {
@@ -157,7 +159,7 @@
   text-decoration: underline;
 }
 
-.bouton {
+button[type="submit"] {
   background-color: #141914;
   color: white;
   border: none;
@@ -168,7 +170,7 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.bouton:hover {
+button[type="submit"]:hover {
   background-color: #ffffff;
   color: #141914;
   border: 1px solid #141914;
@@ -182,7 +184,7 @@
 .blog-container {
   background-color: #121212;
   color: #cccccc;
-  padding: 200px;
+
   line-height: 1.6;
 }
 
