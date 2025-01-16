@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #7d0223;
+    --secondary-color: #333;
+    --background-color: #1e1e1e;
+    --text-color: #cccccc;
+    --accent-color: #ffffff;
+  
+    /* Dégradés */
+    --gradient-hero: linear-gradient(135deg, #7d0223, #333);
+    --gradient-team: linear-gradient(135deg, #333, #7d0223);
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    color: var(--accent-color);
+  }
+  
+  /* Section Hero avec dégradé */
+  .hero {
+    background: var(--gradient-hero), url('hero-image.jpg') no-repeat center center/cover;
+    color: var(--accent-color);
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .cta-button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    transition: 0.3s ease-in-out;
+  }
+  
+  /* Section Nos Valeurs */
+  .values-section {
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .value-item {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  /* Section Équipe */
+.team-section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .team-section h2 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Carte d'équipe */
+  .team-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+  
+  .team-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .team-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .team-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+  }
+  
+  .team-content p {
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  .team-description {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.4;
+  }
+  /* Animation et style pour les valeurs */
+.value-item {
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative; /* Nécessaire pour les animations internes */
+    overflow: hidden;
+  }
+  
+  .value-item:hover {
+    transform: translateY(-10px); /* Déplace légèrement vers le haut */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ajoute une ombre élégante */
+  }
+  
+  .value-item:hover h3 {
+    color: var(--primary-color); /* Change la couleur du titre à l'hover */
+  }
+  
+  .value-item:hover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: var(--gradient-hero); /* Dégradé survolé */
+    z-index: 0;
+    transform: rotate(45deg);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .value-item:hover::before {
+    transform: rotate(0deg); /* Effet d'animation au hover */
+    filter: blur(20px); /* Flou pour un effet lumineux */
+  }
+  
+  .value-item h3, .value-item p {
+    position: relative;
+    z-index: 1; /* Place le contenu au-dessus de l'effet */
+  }
+  
+  /* Suppression des soulignements classiques des liens */
+  a {
+    text-decoration: none; /* Retire les soulignements */
+    border-bottom: 2px solid transparent; /* Ligne fine au survol */
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  a:hover {
+    border-color: var(--primary-color); /* Montre la ligne au hover */
+  }
