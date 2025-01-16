@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  position: relative;
   padding: 0;
   box-sizing: border-box; /* Simplifie la gestion des dimensions */
 }
@@ -7,7 +8,6 @@
 :root {
   --menu-bars-color: #7D0223;
   --game-item-color: #333;
-  --background-color:
 }
 
 * {
@@ -52,12 +52,18 @@ p {
   max-width: 100px;
 }
 
+.paralax-background {
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+}
+
+
 .home-display {
   display: flex;
   width: 100%;
   height: 600px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-    url("rsc/home-background.webp");
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
   background-size: cover;
 }
 
@@ -92,6 +98,7 @@ p {
 .game-list-container {
   padding-top: 25px;
   padding-bottom: 25px;
+  background: white;
 }
 .game-list-container a {
   text-decoration: none; /* Supprime le soulignement */
@@ -111,12 +118,11 @@ p {
   padding-left: 75px;
   padding-top: 150px;
   padding-bottom: 150px;
-
-  font-style: italic;
-  text-align: center;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
     url("rsc/consolevita.svg");
   background-color: var(--menu-bars-color);
+  font-style: italic;
+  text-align: center;
 }
 
 .blog-container {
@@ -182,6 +188,7 @@ p {
   margin-bottom: 8px;
 }
 .card__desc {
+  font-family: 'Poppins';
   margin-bottom: 20px;
   font-size: 15px;
   color: #858484;
