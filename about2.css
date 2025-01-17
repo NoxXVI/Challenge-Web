@@ -72,7 +72,7 @@
   
   .value-item {
     background-color: var(--secondary-color);
-    padding: 20px;
+    padding: px;
     border-radius: 10px;
   }
   
@@ -97,6 +97,7 @@
   
   /* Carte d'équipe */
   .team-card {
+    padding: 20px;
     background-color: var(--secondary-color);
     border-radius: 10px;
     overflow: hidden;
@@ -108,16 +109,23 @@
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   }
-  
+  .team-image {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;
+  }
+
   .team-image img {
-    width: 100%;
-    height: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    text-align: center;
     display: block;
     object-fit: cover;
   }
   
   .team-content {
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
   }
   
@@ -155,8 +163,8 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Ajoute une ombre élégante */
   }
   
-  .value-item:hover h3 {
-    color: var(--primary-color); /* Change la couleur du titre à l'hover */
+  .value-item:hover {
+    background-color: var(--primary-color); /* Change la couleur du titre à l'hover */
   }
   
   .value-item:hover::before {
@@ -177,10 +185,10 @@
     filter: blur(20px); /* Flou pour un effet lumineux */
   }
   
-  .value-item h3, .value-item p {
-    position: relative;
+  /* .value-item h3, .value-item p {
+    /* position: relative; */
     z-index: 1; /* Place le contenu au-dessus de l'effet */
-  }
+  } */
   
   /* Suppression des soulignements classiques des liens */
   a {

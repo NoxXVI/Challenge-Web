@@ -19,6 +19,9 @@ p {
 
 /* Barre du bas */
 .bottom-bar {
+  width: 100%;
+  position: absolute;
+  min-height: 0;
   background-color: var(--menu-bars-color);
   color: #fff;
   padding: 20px;
@@ -317,3 +320,7 @@ p {
   --colorbox: #D91604
 }
 
+/* Type form edit */
+.TextWrapper-sc-__sc-1f8vz90-0{
+  font-family: "Orbitron";
+}
