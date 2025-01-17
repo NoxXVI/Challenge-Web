@@ -6,7 +6,7 @@
 }
 
 :root {
-  --menu-bars-color: #7D0223;
+  --menu-bars-color: #7d0223;
   --game-item-color: #333;
 }
 
@@ -14,7 +14,7 @@
   font-family: "Orbitron";
 }
 p {
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
 /* Barre du bas */
@@ -61,7 +61,6 @@ p {
   width: 100%;
 }
 
-
 .home-display {
   display: flex;
   width: 100%;
@@ -79,23 +78,30 @@ p {
 
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid white; /* The typwriter cursor */
+  border-right: 0.15em solid white; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }
 
 .game-list-container {
@@ -121,7 +127,8 @@ p {
   padding-left: 75px;
   padding-top: 150px;
   padding-bottom: 150px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)), linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
+    linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
     url("rsc/consolevita.svg");
   background-color: var(--menu-bars-color);
   font-style: italic;
@@ -191,7 +198,7 @@ p {
   margin-bottom: 8px;
 }
 .card__desc {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   margin-bottom: 20px;
   font-size: 15px;
   color: #858484;
@@ -280,47 +287,65 @@ p {
   --c: 5px; /* perspective du cube */
   --g: calc(var(--c) * 0.707); /* 0.707 = cos(45deg) = sin(45deg) */
   --colorbox: var(--menu-bars-color);
-  font-family: 'Orbitron';
+  font-family: "Orbitron";
 
   padding: 8px;
   transition: 0.5s;
   border: solid transparent;
-  border-width: var(--b) var(--b) calc(var(--c) + var(--b)) calc(var(--c) + var(--b));
-  background: 
-    linear-gradient(-45deg, transparent var(--g), rgba(255, 255, 255, 0.6) 0) left / var(--c) 100%,
-    linear-gradient(135deg, transparent var(--g), rgba(255, 255, 255, 0.3) 0) bottom / 100% var(--c),
-    conic-gradient(from -90deg at top var(--b) right var(--b), var(--colorbox) 270deg, transparent 0),
-    conic-gradient(from 90deg at bottom calc(var(--c) + var(--b)) left calc(var(--c) + var(--b)), var(--colorbox) 270deg, transparent 0);
+  border-width: var(--b) var(--b) calc(var(--c) + var(--b))
+    calc(var(--c) + var(--b));
+  background: linear-gradient(
+        -45deg,
+        transparent var(--g),
+        rgba(255, 255, 255, 0.6) 0
+      )
+      left / var(--c) 100%,
+    linear-gradient(135deg, transparent var(--g), rgba(255, 255, 255, 0.3) 0)
+      bottom / 100% var(--c),
+    conic-gradient(
+      from -90deg at top var(--b) right var(--b),
+      var(--colorbox) 270deg,
+      transparent 0
+    ),
+    conic-gradient(
+      from 90deg at bottom calc(var(--c) + var(--b)) left
+        calc(var(--c) + var(--b)),
+      var(--colorbox) 270deg,
+      transparent 0
+    );
   background-repeat: no-repeat;
   background-origin: border-box;
   transform: translate(calc(var(--c) / -1), calc(var(--c) / 1));
-  clip-path: 
-    polygon(
-      var(--c) 0%, var(--c) 0%, 
-      100% 0%, 
-      100% calc(100% - var(--c)), 100% calc(100% - var(--c)),
-      var(--c) calc(100% - var(--c)), 
-      var(--c) calc(100% - var(--c))
-    );
+  clip-path: polygon(
+    var(--c) 0%,
+    var(--c) 0%,
+    100% 0%,
+    100% calc(100% - var(--c)),
+    100% calc(100% - var(--c)),
+    var(--c) calc(100% - var(--c)),
+    var(--c) calc(100% - var(--c))
+  );
 }
 
 .d-1:hover {
   transform: translate(0, 0);
-  clip-path: 
-    polygon(
-      0% var(--c), var(--c) 0%, 
-      100% 0%, 
-      100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, 
-      0% 100%, 0% 100%
-    );
+  clip-path: polygon(
+    0% var(--c),
+    var(--c) 0%,
+    100% 0%,
+    100% calc(100% - var(--c)),
+    calc(100% - var(--c)) 100%,
+    0% 100%,
+    0% 100%
+  );
 }
 
-.onpage{
-  color:white;
-  --colorbox: #D91604
+.onpage {
+  color: white;
+  --colorbox: #d91604;
 }
 
 /* Type form edit */
-.TextWrapper-sc-__sc-1f8vz90-0{
+.TextWrapper-sc-__sc-1f8vz90-0 {
   font-family: "Orbitron";
 }
