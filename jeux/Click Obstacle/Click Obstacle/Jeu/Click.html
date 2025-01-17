@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click et Obstacles</title>
+    <link rel="stylesheet" href="Click.css">
+</head>
+<body>
+    <!-- Écran d'accueil -->
+    <div class="welcome-screen">
+        <h1> Click Obstacles</h1>
+        <button id="start-button">Jouer</button>
+    </div>
+
+    <!-- Conteneur principal du jeu -->
+    <div class="game-container" style="display: none;"> <!-- Caché par défaut -->
+        <!-- Héros (Cercle bleu remplacé par un emoji) -->
+        <div id="circle">🦸</div>
+
+        <!-- Méchant (Cercle rouge remplacé par un emoji) -->
+        <div id="obstacle">👹</div>
+
+        <!-- Bonus (Diamant) -->
+        <div id="bonus" style="display: none;">💎</div>
+
+        <!-- Tableau de score -->
+        <div class="score-board">
+            <p>Score : <span id="score">0</span></p>
+            <p>Niveau : <span id="level">1</span></p>
+            <p>Temps restant : <span id="timer">30</span> secondes</p>
+        </div>
+
+        <!-- Barre de progression -->
+        <div class="timer-bar">
+            <div class="progress"></div>
+        </div>
+
+        <!-- Bouton pour le mode nuit -->
+        <button id="toggle-night-mode">Mode Nuit</button>
+    </div>
+
+    <script src="Click.js" type="module"></script>
+</body>
+</html>

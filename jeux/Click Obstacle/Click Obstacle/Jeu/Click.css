@@ -1,0 +1,220 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7cH3kKubPFIbKCwBz2RHpYiGNwTvTVxMqqQ&s') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+body.night-mode {
+    background: #111;
+    color: #eee;
+}
+
+body.night-mode .game-container {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.welcome-screen {
+    position: fixed; /* Prend toute la fenêtre */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6); /* Fond noir semi-transparent */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Toujours au-dessus des autres éléments */
+}
+
+
+.welcome-screen h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-screen button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: bounce 1.5s infinite;
+}
+
+.welcome-screen button:hover {
+    background-color: #c0392b;
+}
+
+.game-container {
+    position: relative;
+    width: 80vw;
+    height: 80vh;
+    border: 2px solid #000;
+    background-color: rgba(255, 255, 255, 0.7);
+    overflow: hidden;
+    display: none; /* Caché par défaut */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#circle {
+    position: absolute;
+    width: 60px; /* Ajuste la taille */
+    height: 60px;
+    background: none; /* Supprime la couleur de fond */
+    border-radius: 0; /* Supprime les coins arrondis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px; /* Taille de l'emoji */
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+
+/* Animation pour le héros */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+#obstacle {
+    position: absolute;
+    width: 60px; /* Ajuste la taille */
+    height: 60px;
+    background: none; /* Supprime la couleur de fond */
+    border-radius: 0; /* Supprime les coins arrondis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px; /* Taille de l'emoji */
+    animation: shake 0.8s infinite;
+}
+
+/* Animation pour le méchant */
+@keyframes shake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-5px, 5px);
+    }
+    50% {
+        transform: translate(5px, -5px);
+    }
+    75% {
+        transform: translate(-5px, -5px);
+    }
+}
+
+
+#bonus {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: none; /* Supprime la couleur de fond */
+    border-radius: 0; /* Supprime les coins arrondis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px; /* Taille de l'emoji */
+    animation: glow 1.5s infinite;
+}
+
+/* Animation pour le bonus */
+@keyframes glow {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+.score-board {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 18px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.timer-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 100%;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.timer-bar .progress {
+    height: 100%;
+    background-color: #2ecc71;
+    width: 100%;
+    transition: width 1s linear;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+button#toggle-night-mode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #555;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+button#toggle-night-mode:hover {
+    background-color: #333;
+}
